@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="alert" ng-class="ctrl.message.type" ng-bind="ctrl.message.text" ng-show="ctrl.message.text"></div>
+    <div ng-repeat="stock in ctrl.stocks">
+        <div ng-include="'stock.html'">
+
+        </div>
+    </div>
+</div>
+
+<div ui-view=""></div>

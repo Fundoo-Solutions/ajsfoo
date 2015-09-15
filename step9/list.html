@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="alert" ng-class="ctrl.message.type" ng-bind="ctrl.message.text" ng-show="ctrl.message.text"></div>
+    <div ng-repeat="stock in ctrl.stocks">
+        <div>
+            <div class="stock-dash col-md-3">
+                <span class="stock-name" ng-bind="stock.name">{{stock.name}}</span>
+                <span class="stock-price" ng-bind="stock.price | currency">$17.11</span>
+                    <span class="stock-change"
+                          ng-class="ctrl.changeClass(stock)"
+                          ng-bind="ctrl.calculateChange(stock)">10 %</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div ui-view=""></div>

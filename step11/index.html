@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS @ JSFoo</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body ng-app="stockMarketApp">
+
+    <ul class="nav nav-tabs">
+        <li role="presentation" ui-sref-active="active"><a ui-sref="list">Home</a></li>
+        <li role="presentation" ui-sref-active="active"><a ui-sref="register">Register</a></li>
+    </ul>
+    <div ui-view=""></div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-messages.min.js"></script>
+    <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <script src="main.controller.js"></script>
+    <script src="register.controller.js"></script>
+
+    <script src="alert.service.js"></script>
+    <script src="stock.service.js"></script>
+    <script src="user.service.js"></script>
+
+    <script src="stock.directive.js"></script>
+</body>
+</html>

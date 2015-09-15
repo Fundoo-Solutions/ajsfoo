@@ -1,0 +1,7 @@
+<div class="stock-dash col-md-3">
+    <span class="stock-name" ng-bind="stock.name">{{stock.name}}</span>
+    <span class="stock-price" ng-bind="stock.price | currency">$17.11</span>
+        <span class="stock-change"
+              ng-class="ctrl.changeClass(stock)"
+              ng-bind="ctrl.calculateChange(stock)">10 %</span>
+</div>

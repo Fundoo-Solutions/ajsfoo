@@ -1,0 +1,23 @@
+{
+  "name": "ajsfoo",
+  "version": "1.0.0",
+  "description": "AngularJS JSFoo Workshop",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fundoo-Solutions/ajsfoo.git"
+  },
+  "author": "Shyam Seshadri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fundoo-Solutions/ajsfoo/issues"
+  },
+  "homepage": "https://github.com/Fundoo-Solutions/ajsfoo#readme",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3"
+  }
+}

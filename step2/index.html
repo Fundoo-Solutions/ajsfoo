@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS @ JSFoo</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body ng-app="stockMarketApp">
+
+
+    <div class="row" ng-controller="MainCtrl as ctrl">
+        <div ng-repeat="stock in ctrl.stocks">
+            <div>
+                <div class="stock-dash col-md-3">
+                    <span class="stock-name" >{{stock.name}}</span>
+                    <span class="stock-price" >$17.11</span>
+                    <span class="stock-change positive" >10 %</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="controllers.js"></script>
+</body>
+</html>

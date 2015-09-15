@@ -1,0 +1,31 @@
+<div class="row hero-unit">
+    <form ng-submit="rCtrl.register()" name="registerForm" novalidate>
+        <div class="form-group">
+            <label for="usernameField">Username</label>
+            <input type="text"
+                   id="usernameField"
+                   name="uname"
+                   placeholder="Username"
+                   ng-model="rCtrl.user.username"
+                   ng-minlength="5"
+                   required>
+        </div>
+        <div ng-messages="registerForm.uname.$error">
+            <div ng-message="required">username is required</div>
+            <div ng-message="minlength">username must be minimum 5 characters</div>
+        </div>
+        <div class="form-group">
+            <label for="passwordField">Password</label>
+            <input type="password"
+                   id="passwordField"
+                   name="pwd"
+                   placeholder="Password"
+                   ng-model="rCtrl.user.password"
+                   required>
+        </div>
+        <div ng-messages="registerForm.pwd.$error">
+            <div ng-message="required">Password is required</div>
+        </div>
+        <input type="submit" value="Register" class="btn btn-default" ng-disabled="registerForm.$invalid">
+    </form>
+</div>

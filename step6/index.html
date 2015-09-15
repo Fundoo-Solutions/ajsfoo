@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS @ JSFoo</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+</head>
+<body ng-app="stockMarketApp">
+
+
+    <div class="row" ng-controller="MainCtrl as ctrl">
+        <div class="alert" ng-class="ctrl.message.type" ng-bind="ctrl.message.text" ng-show="ctrl.message.text"></div>
+        <div ng-repeat="stock in ctrl.stocks">
+            <div>
+                <div class="stock-dash col-md-3">
+                    <span class="stock-name" ng-bind="stock.name">{{stock.name}}</span>
+                    <span class="stock-price" ng-bind="stock.price | currency">$17.11</span>
+                    <span class="stock-change"
+                          ng-class="ctrl.changeClass(stock)"
+                          ng-bind="ctrl.calculateChange(stock)">10 %</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row hero-unit" ng-controller="RegisterCtrl as rCtrl">
+        <form ng-submit="rCtrl.register()" name="registerForm" novalidate>
+            <div class="form-group">
+                <label for="usernameField">Username</label>
+                <input type="text"
+                       id="usernameField"
+                       name="uname"
+                       placeholder="Username"
+                       ng-model="rCtrl.user.username"
+                       ng-minlength="5"
+                       required>
+            </div>
+            <div ng-messages="registerForm.uname.$error">
+                <div ng-message="required">username is required</div>
+                <div ng-message="minlength">username must be minimum 5 characters</div>
+            </div>
+            <div class="form-group">
+                <label for="passwordField">Password</label>
+                <input type="password"
+                       id="passwordField"
+                       name="pwd"
+                       placeholder="Password"
+                       ng-model="rCtrl.user.password"
+                       required>
+            </div>
+            <div ng-messages="registerForm.pwd.$error">
+                <div ng-message="required">Password is required</div>
+            </div>
+            <input type="submit" value="Register" class="btn btn-default" ng-disabled="registerForm.$invalid">
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-messages.min.js"></script>
+    <script src="app.js"></script>
+    <script src="main.controller.js"></script>
+    <script src="register.controller.js"></script>
+    <script src="alert.service.js"></script>
+</body>
+</html>
